@@ -5,7 +5,7 @@ import "./styles/app.scss";//styling
 
 //components
 import Header from './components/header/header.component';
-
+import SideBar from './components/sidebar/sidebar.component';
 
 
 
@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       
         <Header/>
+        <SideBar/>
     </div>
   );
 }
