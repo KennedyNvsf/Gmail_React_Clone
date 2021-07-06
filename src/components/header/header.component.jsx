@@ -9,7 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AppsIcon from '@material-ui/icons/Apps';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+// import NotificationsIcon from '@material-ui/icons/Notifications';
+import SettingsIcon from '@material-ui/icons/Settings';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 
 
@@ -48,11 +50,15 @@ const Header = () => {
                <div className="headerRight">
 
                    <IconButton>
-                       <AppsIcon/>
+                       <HelpOutlineIcon/>
                    </IconButton>
 
                    <IconButton>
-                       <NotificationsIcon/>
+                       <SettingsIcon/>
+                   </IconButton>
+
+                   <IconButton>
+                       <AppsIcon/>
                    </IconButton>
 
                    <Avatar/>
