@@ -1,0 +1,54 @@
+
+
+.headerSection{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:  1px solid whitesmoke;
+}
+
+.headerLeft{
+
+    display: flex;
+    align-items: center;
+    
+    img{
+        object-fit: contain;
+        height: 80px;
+        margin-left: 5px;
+    }
+}
+
+.headerCenter{
+
+    display: flex;
+    align-items: center;
+    flex: 0.6;
+
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+
+    input{
+
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 7px;
+        font-size: medium;
+    }
+
+    .MuiSvgIcon-root{
+        color: grey;
+    }
+
+}
+
+.headerRight{
+
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}

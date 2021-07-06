@@ -1,11 +1,20 @@
 import React from 'react';
-import "./styles/app.scss";
+import "./styles/app.scss";//styling
+
+
+
+//components
+import Header from './components/header/header.component';
+
+
+
 
 
 function App() {
   return (
     <div className="App">
-        <h1>Lets build Gmail</h1>
+      
+        <Header/>
     </div>
   );
 }

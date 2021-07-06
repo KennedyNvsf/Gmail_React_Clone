@@ -1,0 +1,77 @@
+/*VARIABLES*/
+/*MIXINS*/
+/*IMPORTS*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.headerSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.headerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerLeft img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 80px;
+  margin-left: 5px;
+}
+
+.headerCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0.6;
+      -ms-flex: 0.6;
+          flex: 0.6;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.headerCenter input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 7px;
+  font-size: medium;
+}
+
+.headerCenter .MuiSvgIcon-root {
+  color: grey;
+}
+
+.headerRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 20px;
+}
+/*# sourceMappingURL=app.css.map */
