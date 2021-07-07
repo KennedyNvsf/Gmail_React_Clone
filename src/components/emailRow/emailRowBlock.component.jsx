@@ -3,6 +3,8 @@
 import React from "react";
 import "../emailRow/_emailRowBlock.styles.scss";
 
+//React Router
+import {useHistory} from "react-router-dom"
 
 //MATERIAL UI ICONS
 
@@ -16,10 +18,11 @@ import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutline
 
 const EmailRowBlock = ({id, title, subject, description, time}) => {
 
+    const history = useHistory();
 
     return (
 
-        <div className="emailRow_block">
+        <div onClick={() => history.push("/mail")} className="emailRow_block">
 
             <div className="emailRow_options">
 

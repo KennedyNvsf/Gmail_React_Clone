@@ -75,8 +75,8 @@ const EmailList = () => {
 
             <div className="emailListContainer">
 
-                <SectionBlocks Icon={InboxIcon} title="Inbox" color="red" selected />
-                <SectionBlocks Icon={PeopleIcon} title="Primary" color="blue"  />
+                <SectionBlocks Icon={InboxIcon} title="Primary" color="red" selected />
+                <SectionBlocks Icon={PeopleIcon} title="Socials" color="blue"  />
                 <SectionBlocks Icon={LocalOfferIcon} title="Promotions" color="green"  />
 
             </div>

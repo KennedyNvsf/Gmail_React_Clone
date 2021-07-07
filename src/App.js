@@ -30,11 +30,11 @@ function App() {
 
                   <Switch>
 
-                      <Route path="/">
+                      <Route exact path="/">
                         <EmailList/>
                       </Route>
 
-                      <Route path="/mail">
+                      <Route  path="/mail">
                         <Mail/>
                       </Route>
 
