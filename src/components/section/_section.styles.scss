@@ -1,0 +1,30 @@
+
+
+
+.sectionBlock {
+
+    display: flex;
+    align-items: center;
+
+    min-width: 200px;
+    border-bottom-width: 2px;
+    padding: 15px;
+    cursor:pointer;
+
+    h4{
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    &:hover{
+
+        background-color: whitesmoke;
+        border-width: 3px  !important;
+    }
+}
+
+.sectionBlock_selected{
+
+    background-color: whitesmoke;
+    border-width: 3px  !important;
+}
