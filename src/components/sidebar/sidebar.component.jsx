@@ -2,6 +2,10 @@
 import React from "react";
 import "../sidebar/_sidebar.styles.scss";
 
+//REDUX
+import { useDispatch } from "react-redux";
+import { openSendMessage } from "../../features/mail.slice";
+
 //COMPONENTS
 import SideBarOption from "../sidebarOption/sbar_option.component";
 
@@ -23,14 +27,17 @@ import DuoIcon from '@material-ui/icons/Duo';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 
+
 const SideBar = () => {
+
+    const dispatch = useDispatch();
 
 
     return(
 
         <div className="sidebarSection">
 
-            <Button startIcon = {<AddIcon fontSize="large" />} className="sidebarCompose">Compose</Button>
+            <Button onClick={()=> dispatch(openSendMessage())} startIcon = {<AddIcon fontSize="large" />} className="sidebarCompose">Compose</Button>
 
             <SideBarOption Icon={InboxIcon} title={"Inbox"} number={156} selected={true}/>
             <SideBarOption Icon={StarIcon} title={"Starred"} number={10}/>
