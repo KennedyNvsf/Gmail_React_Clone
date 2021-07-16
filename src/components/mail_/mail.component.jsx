@@ -6,6 +6,10 @@ import "../mail_/_mail.styles.scss";
 //REACT ROUTER
 import {useHistory} from "react-router-dom";
 
+//redux
+import {useSelector} from "react-redux";
+import { selectOpenMail } from '../../features/mail.slice';
+
 //MATERIAL UI ICONS
 
 import { IconButton } from "@material-ui/core";
@@ -32,6 +36,8 @@ import SendIcon from '@material-ui/icons/Send';
 const Mail = () => {
 
     const history = useHistory();
+
+    const selectedMail = useSelector(selectOpenMail);
 
     return (
 
@@ -103,14 +109,14 @@ const Mail = () => {
             <div className="mailBody">
 
                 <div className="mailBody_header">
-                    <h2>SUBJECT</h2>
+                    <h2>{selectedMail?.subject}</h2>
                     <LabelImportantIcon className="mail_important" />
-                    <p>title</p>
-                    <p className="mailTime">10pm</p>
+                    <p>{selectedMail?.title}</p>
+                    <p className="mailTime">{selectedMail?.time}</p>
                 </div>
 
                 <div className="mailMessage">
-                   <p>This is a message</p>
+                   <p>{selectedMail?.description}</p>
                 </div>
             </div>
 

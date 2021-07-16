@@ -1,11 +1,17 @@
 
 
-import React from "react";
+import React,{useEffect, useState} from "react";
 import "../emailList_/_emailList.styles.scss";
 
 //Components
 import SectionBlocks from "../section/section.component";
 import EmailRowBlock from "../emailRow/emailRowBlock.component";
+
+//firebase
+// import firebase from "firebase"
+import { db } from "../../firebase";
+
+// import { useSelector } from "react-redux";
 
 //MATERIAL UI ICONS
 
@@ -26,7 +32,26 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 
 
 
+
+
 const EmailList = () => {
+
+    const [emails, setEmails] = useState([])
+
+     useEffect(() => {
+
+        db.collection("emails").orderBy("timestamp", "desc").onSnapshot((snapshot) => 
+
+            setEmails(
+
+                snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    data: doc.data(),
+                }))
+            )
+        );
+
+    }, []);
 
     return (
 
@@ -83,9 +108,23 @@ const EmailList = () => {
 
             <div className="emailRow_container">
 
-                <EmailRowBlock title="JOB OFFER" subject="Recruitment" description="Scheduling Interview" time="4pm" />
+
+                {emails.map(({id, data: {to, subject, message, timestamp } }) => (
+
+                    <EmailRowBlock
+                        key={id}
+                        title={to}
+                        description={message}
+                        subject={subject}
+                        time={new Date(timestamp?.seconds * 1000).toUTCString()}
+                       
+                    />
+                ))}
+
+                {/* <EmailRowBlock title="JOB OFFER" subject="Recruitment" description="Scheduling Interview" time="4pm" />
+
                 <EmailRowBlock title="IT Department" subject="Software Review" description="Hey Kennedy, Amazing job" time="10am" />
-                <EmailRowBlock title="Project Manager" subject="New client request" description="the software must be completed until next week" time="5pm" />
+                <EmailRowBlock title="Project Manager" subject="New client request" description="the software must be completed until next week" time="5pm" /> */}
 
             </div>
 

@@ -4,7 +4,11 @@ import React from "react";
 import "../emailRow/_emailRowBlock.styles.scss";
 
 //React Router
-import {useHistory} from "react-router-dom"
+import {useHistory} from "react-router-dom";
+
+//redux
+import {useDispatch} from "react-redux";
+import { selectMail } from '../../features/mail.slice';
 
 //MATERIAL UI ICONS
 
@@ -19,10 +23,25 @@ import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutline
 const EmailRowBlock = ({id, title, subject, description, time}) => {
 
     const history = useHistory();
+    const dispatch = useDispatch();
+
+
+    const openMail = () => {
+
+        dispatch(selectMail({
+            id,
+            title,
+            subject,
+            description,
+            time,
+        }));
+
+        history.push("/mail");
+    }
 
     return (
 
-        <div onClick={() => history.push("/mail")} className="emailRow_block">
+        <div onClick={openMail} className="emailRow_block">
 
             <div className="emailRow_options">
 
